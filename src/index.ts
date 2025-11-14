@@ -133,7 +133,8 @@ app.use("/api/actividades", authenticationMiddleware, autorizationMiddleware("ac
 app.use("/api/reservas", authenticationMiddleware, autorizationMiddleware("reservas"), reservasRoutes);
 app.use("/api/servicios", authenticationMiddleware, autorizationMiddleware("servicios"), serviciosRoutes);
 // Servidor
-const PORT:number = process.env.PORT || 3000;3000;
+const PORT = Number(process.env.PORT) || 3000;
+
 const HOST:string = "127.0.0.1";
 
 app.listen(PORT, HOST, () => {
